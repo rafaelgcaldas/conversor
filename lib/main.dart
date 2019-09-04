@@ -113,11 +113,11 @@ class _HomeState extends State<Home> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Icon(Icons.monetization_on, size: 150.0, color: Colors.amber),
-                        buildTextField("Reais", "R\$", realController, _realChanged),
+                        buildTextField("Reais", "R\$ ", realController, _realChanged),
                         Divider(),
-                        buildTextField("Dólares", "US\$", dolarController, _dolarChanged),
+                        buildTextField("Dólares", "US\$ ", dolarController, _dolarChanged),
                         Divider(),
-                        buildTextField("Euros", "£", euroController, _euroChanged),
+                        buildTextField("Euros", "£ ", euroController, _euroChanged),
                       ],
                     ),
                   );
@@ -135,7 +135,8 @@ Widget buildTextField(String label, String prefix, TextEditingController control
         labelText: label,
         labelStyle: TextStyle(color: Colors.amber),
         border: OutlineInputBorder(),
-        prefixText: prefix
+        prefix: Text(prefix, style: TextStyle(color: Colors.amber)),
+        enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
     ),
     style: TextStyle(
         color: Colors.amber, fontSize: 25.0
